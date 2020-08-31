@@ -31,6 +31,7 @@
   * [Installation](#installation)
 * [Roadmap](#roadmap)
 * [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
 
 
 <!-- ABOUT THE PROJECT -->
@@ -69,7 +70,11 @@ npm install
 ```sh
 npm run build
 ```
-
+5. Start server
+On the dist folder:
+```sh
+npx server
+```
 
 <!-- ROADMAP -->
 ## Roadmap
@@ -84,3 +89,8 @@ Bruno Cerqueira - brunocerqueirasd@gmail.com
 
 Project Link: [https://github.com/Bruno-Cerqueira/training-webpack](https://github.com/Bruno-Cerqueira/training-webpack)
 
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+
+[https://survivejs.com/](survive js) for the amazing webpack book.
