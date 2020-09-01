@@ -70,11 +70,15 @@ npm install
 ```sh
 npm run build
 ```
-5. Start server
-On the dist folder:
+
+<!-- USAGE -->
+## Usage
+
+Start server
 ```sh
-npx server
+npm start
 ```
+Go to `http://localhost:8080/`
 
 <!-- ROADMAP -->
 ## Roadmap
