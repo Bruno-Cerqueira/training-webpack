@@ -7,6 +7,7 @@ const commonConfig = merge([
     entry: ["./src", "webpack-plugin-serve/client"],
   },
   parts.page({ title: "Training Webpack" }),
+  parts.loadCSS(),
 ]);
 
 const productionConfig = merge([]);

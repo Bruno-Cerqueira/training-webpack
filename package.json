@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/Bruno-Cerqueira/training-webpack#readme",
   "dependencies": {
+    "css-loader": "^4.2.2",
     "mini-html-webpack-plugin": "^3.0.7",
+    "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
     "webpack-merge": "^5.1.3",
     "webpack-nano": "^1.0.0",
