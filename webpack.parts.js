@@ -8,6 +8,13 @@ const glob = require("glob");
 const PurgeCSSPlugin = require("purgecss-webpack-plugin");
 const ALL_FILES = glob.sync(path.join(__dirname, "src/*.js"));
 
+exports.tailwind = () => ({
+  loader: "postcss-loader",
+  options: {
+    plugins: [require("tailwindcss")()],
+  },
+});
+
 exports.eliminateUnusedCSS = () => ({
   plugins: [
     new PurgeCSSPlugin({
@@ -46,7 +53,7 @@ exports.page = ({ title }) => ({
   ],
 });
 
-exports.extractCSS = ({ options = {}, loaders = ["sass-loader"] } = {}) => {
+exports.extractCSS = ({ options = {}, loaders } = {}) => {
   return {
     module: {
       rules: [
@@ -55,6 +62,7 @@ exports.extractCSS = ({ options = {}, loaders = ["sass-loader"] } = {}) => {
           use: [
             { loader: MiniCssExtractPlugin.loader, options },
             "css-loader",
+            "sass-loader"
           ].concat(loaders),
         },
       ],
