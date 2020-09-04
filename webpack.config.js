@@ -11,11 +11,13 @@ const commonConfig = merge([
 
 const productionConfig = merge([
   parts.extractCSS(),
+  parts.eliminateUnusedCSS(),
 ]);
 
 const developmentConfig = merge([
   parts.devServer(),
   parts.extractCSS({ options: { hmr: true } }),
+  parts.eliminateUnusedCSS(),
 ]);
 
 const getConfig = (mode) => {

@@ -3,6 +3,26 @@ const {
   MiniHtmlWebpackPlugin,
 } = require("mini-html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require("path");
+const glob = require("glob");
+const PurgeCSSPlugin = require("purgecss-webpack-plugin");
+const ALL_FILES = glob.sync(path.join(__dirname, "src/*.js"));
+
+exports.eliminateUnusedCSS = () => ({
+  plugins: [
+    new PurgeCSSPlugin({
+      whitelistPatterns: [], // Example: /^svg-/
+      paths: ALL_FILES, // Consider extracting as a parameter
+      extractors: [
+        {
+          extractor: (content) =>
+            content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [],
+          extensions: ["html"],
+        },
+      ],
+    }),
+  ],
+});
 
 exports.devServer = () => ({
   watch: true,
