@@ -8,6 +8,12 @@ const commonConfig = merge([
     entry: ["./src", "webpack-plugin-serve/client"],
   },
   parts.page({ title: "Training Webpack" }),
+  parts.loadImages({
+    options: {
+      limit: 15000,
+      name: "[name].[ext]",
+    },
+  }),
 ]);
 
 const productionConfig = merge([

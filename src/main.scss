@@ -9,4 +9,10 @@
 
 body {
   background: $body-color;
+
+  height: 100vh;
+  background-image: url("./img/logo-webpack.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
