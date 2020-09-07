@@ -5,7 +5,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="" alt="Logo" width="80" height="80">
+    <img src="./src/img/logo-webpack.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Studying Webpack</h3>

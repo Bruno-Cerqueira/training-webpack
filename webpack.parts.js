@@ -79,17 +79,21 @@ exports.loadImages = ({ include, exclude, options } = {}) => ({
   module: {
     rules: [
       {
-        test: /\.(png|jpg)$/,
-        include,
-        exclude,
-        use: {
-          loader: "url-loader",
-          options,
-        },
-      },
-      {
-        test: /\.svg$/,
-        use: "file-loader",
+        test: /\.(gif|png|jpe?g|svg)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "images/[hash]-[name].[ext]",
+            }
+          },
+          {
+            loader: "image-webpack-loader",
+            options: {
+              disable: false,
+            },
+          },
+        ]
       },
     ],
   },
