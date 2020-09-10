@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/Bruno-Cerqueira/training-webpack#readme",
   "dependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "babel-loader": "^8.1.0",
     "css-loader": "^4.2.2",
     "file-loader": "^6.1.0",
     "glob": "^7.1.6",
