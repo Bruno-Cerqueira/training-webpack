@@ -15,6 +15,7 @@ const productionConfig = merge([
   parts.extractCSS({ loaders: cssLoaders }),
   parts.eliminateUnusedCSS(),
   parts.loadJavaScript(),
+  parts.generateSourceMaps({ type: "source-map" }),
 ]);
 
 const developmentConfig = merge([
