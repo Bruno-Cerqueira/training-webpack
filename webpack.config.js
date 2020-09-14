@@ -16,6 +16,13 @@ const productionConfig = merge([
   parts.eliminateUnusedCSS(),
   parts.loadJavaScript(),
   parts.generateSourceMaps({ type: "source-map" }),
+  {
+    optimization: {
+      splitChunks: {
+        chunks: "all",
+      },
+    },
+  },
 ]);
 
 const developmentConfig = merge([

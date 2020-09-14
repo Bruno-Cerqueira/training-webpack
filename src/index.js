@@ -1,3 +1,6 @@
+import "react";
+import "react-dom";
+
 import component from "./component";
 import icon from "./icon";
 import "./main.scss";
