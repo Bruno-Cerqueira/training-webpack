@@ -9,6 +9,7 @@ const commonConfig = merge([
   },
   parts.page({ title: "Training Webpack" }),
   parts.loadImages(),
+  parts.clean(),
 ]);
 
 const productionConfig = merge([
