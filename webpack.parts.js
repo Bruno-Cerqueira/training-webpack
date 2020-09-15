@@ -9,6 +9,8 @@ const PurgeCSSPlugin = require("purgecss-webpack-plugin");
 const ALL_FILES = glob.sync(path.join(__dirname, "src/*.js"));
 const APP_SOURCE = path.join(__dirname, "src");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const cssnano = require("cssnano");
 
 exports.tailwind = () => ({
   loader: "postcss-loader",
@@ -133,4 +135,14 @@ exports.generateSourceMaps = ({ type }) => ({
 
 exports.clean = path => ({
   plugins: [new CleanWebpackPlugin()],
+});
+
+exports.minifyCSS = ({ options }) => ({
+  plugins: [
+    new OptimizeCSSAssetsPlugin({
+      cssProcessor: cssnano,
+      cssProcessorOptions: options,
+      canPrint: false,
+    }),
+  ],
 });

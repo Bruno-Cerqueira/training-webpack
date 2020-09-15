@@ -24,6 +24,11 @@ const productionConfig = merge([
       },
     },
   },
+  parts.minifyCSS({
+    options: {
+      preset: ["default"],
+    },
+  }),
 ]);
 
 const developmentConfig = merge([
